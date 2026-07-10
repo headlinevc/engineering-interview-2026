@@ -1,0 +1,12 @@
+[Unit]
+Description=My App Worker
+After=network.target
+
+[Service]
+Type=simple
+User=myapp
+ExecStart=/opt/myapp/bin/myapp --config /etc/myapp/config.yml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

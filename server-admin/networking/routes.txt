@@ -1,0 +1,9 @@
+# Q1 / Q3: sample output of `ip route` on host web01 (10.0.0.15)
+
+default via 10.0.0.1 dev eth0
+10.0.0.0/24 dev eth0 proto kernel scope link src 10.0.0.15
+172.16.5.0/24 via 10.0.0.254 dev eth0
+192.168.100.0/24 dev eth1 proto kernel scope link src 192.168.100.1
+
+# Ask the candidate to explain each line, then predict which route/interface
+# is used for traffic to: 10.0.0.42, 172.16.5.9, 192.168.100.50, 8.8.8.8

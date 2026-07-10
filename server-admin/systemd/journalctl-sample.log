@@ -1,0 +1,23 @@
+-- Sample output for: journalctl -u myapp -f
+-- (paired with systemd/myapp.service)
+
+Jul 10 09:14:01 web01 systemd[1]: Started My App Worker.
+Jul 10 09:14:01 web01 myapp[28401]: FATAL: cannot read config file /etc/myapp/config.yml: no such file or directory
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Main process exited, code=exited, status=1/FAILURE
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Failed with result 'exit-code'.
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Scheduled restart job, restart counter is at 5.
+Jul 10 09:14:01 web01 systemd[1]: Started My App Worker.
+Jul 10 09:14:01 web01 myapp[28409]: FATAL: cannot read config file /etc/myapp/config.yml: no such file or directory
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Main process exited, code=exited, status=1/FAILURE
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Failed with result 'exit-code'.
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Scheduled restart job, restart counter is at 6.
+Jul 10 09:14:01 web01 systemd[1]: Started My App Worker.
+Jul 10 09:14:01 web01 myapp[28417]: FATAL: cannot read config file /etc/myapp/config.yml: no such file or directory
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Main process exited, code=exited, status=1/FAILURE
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Start request repeated too quickly.
+Jul 10 09:14:01 web01 systemd[1]: myapp.service: Failed with result 'exit-code'.
+Jul 10 09:14:01 web01 systemd[1]: Failed to start My App Worker.
+
+-- Note: the actual file on disk is /etc/myapp/config.yaml (not .yml).
+-- Ask the candidate to spot the root cause from the log, and separately:
+-- what would adding RestartSec= to the unit change about this behavior?

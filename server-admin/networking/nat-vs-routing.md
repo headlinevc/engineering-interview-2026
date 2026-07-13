@@ -27,7 +27,3 @@ ip route add 10.0.0.0/24 via <R1's address on the shared link>
 
 Now hosts on both networks can reach each other directly by their real
 IPs, in either direction, with no address rewriting.
-
-Ask the candidate: why does Setup 1 only allow outbound-initiated traffic,
-and what has to be true (routes on both sides, no overlapping subnets) for
-Setup 2 to work?

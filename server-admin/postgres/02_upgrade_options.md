@@ -26,3 +26,14 @@ CREATE SUBSCRIPTION mydb_sub
 -- once new instance has caught up (check pg_stat_subscription),
 -- cut app traffic over to new-db and drop the subscription
 ```
+
+## Option C — pg_upgrade
+
+```bash
+pg_upgrade \
+  --old-bindir=/usr/lib/postgresql/14/bin \
+  --new-bindir=/usr/lib/postgresql/18/bin \
+  --old-datadir=/var/lib/postgresql/14/data \
+  --new-datadir=/var/lib/postgresql/18/data \
+  --link
+```

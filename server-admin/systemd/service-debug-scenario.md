@@ -1,5 +1,3 @@
-# Q4: daemon-reload scenario
-
 You edit `myapp.service` to add an environment variable:
 
 ```diff
@@ -12,5 +10,4 @@ You edit `myapp.service` to add an environment variable:
 ```
 
 You then run `systemctl restart myapp`, but the new log level never shows
-up in `journalctl -u myapp`. Ask the candidate: why didn't the change take
-effect, and what command fixes it?
+up in `journalctl -u myapp`.
